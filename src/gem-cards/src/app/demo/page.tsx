@@ -51,7 +51,10 @@ type CardProps = {
 
 function Card(props: CardProps) {
   return (
-    <div className="relative aspect-[3/5] rounded-2xl outline-2 outline-white flex flex-col gap-2">
+    <div
+      className="relative group w-full aspect-[3/5] rounded-2xl outline-2 outline-white flex flex-col gap-2 cursor-pointer"
+      style={{ containerType: "inline-size" }}
+    >
       <Image
         src={`${props.imagePath}`}
         alt="Dope"
@@ -61,17 +64,29 @@ function Card(props: CardProps) {
         className="rounded-lg -z-10"
       />
 
-      <div className="relative flex flex-col justify-center w-full py-1 mt-2">
+      <div className="absolute w-full h-full bg-black opacity-0 group-hover:opacity-25 transition-opacity rounded-2xl" />
+
+      <div className="absolute w-full h-full bg-black opacity-0 group-active:opacity-50 transition-opacity rounded-2xl" />
+
+      <div className="relative flex flex-col justify-center w-full py-1 mt-[3%]">
         <div className="absolute bg-black w-full h-full -z-10 opacity-75" />
-        <h6 className="font-bold text-[2cqh] text-center uppercase">
+        <h6
+          className="font-bold text-center uppercase"
+          style={{ fontSize: "7cqw" }}
+        >
           {props.name}
         </h6>
       </div>
 
-      <div className="absolute bottom-4 left-0 w-full ">
+      <div className="absolute bottom-[3%] left-0 w-full h-fit">
         <div className="absolute w-full h-full bg-black opacity-75 -z-10" />
-        <div className="w-full h-1/4 p-2 flex flex-col gap-2">
-          <p className="text-[1.5cqh] text-center">{props.description}</p>
+        <div className="w-full p-2 flex flex-col gap-2">
+          <p
+            className="bottom-[10%] text-center w-full"
+            style={{ fontSize: "5cqw" }}
+          >
+            {props.description}
+          </p>
           {/* <h5 className="absolute bottom-[4%] left-[4%] uppercase text-sm font-bold">
             Rare
           </h5> */}
