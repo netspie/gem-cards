@@ -4,6 +4,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import MainAppBar from "./MainAppBar";
 
 const robotoSans = Roboto({
   variable: "--font-roboto-sans",
@@ -31,7 +32,9 @@ export default function RootLayout({
         className={`${robotoSans.variable} ${robotoMono.variable} antialiased w-full h-full`}
       >
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <MainAppBar>
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          </MainAppBar>
         </AppRouterCacheProvider>
       </body>
     </html>

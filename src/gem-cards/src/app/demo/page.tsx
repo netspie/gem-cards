@@ -52,7 +52,7 @@ type CardProps = {
 function Card(props: CardProps) {
   return (
     <div
-      className="relative group w-full aspect-[3/5] rounded-2xl outline-2 outline-white flex flex-col gap-2 cursor-pointer"
+      className="relative group w-full aspect-[3/5] rounded-2xl outline-3 flex flex-col gap-2 cursor-pointer"
       style={{ containerType: "inline-size" }}
     >
       <Image
@@ -65,13 +65,12 @@ function Card(props: CardProps) {
       />
 
       <div className="absolute w-full h-full bg-black opacity-0 group-hover:opacity-25 transition-opacity rounded-2xl" />
-
       <div className="absolute w-full h-full bg-black opacity-0 group-active:opacity-50 transition-opacity rounded-2xl" />
 
       <div className="relative flex flex-col justify-center w-full py-1 mt-[3%]">
         <div className="absolute bg-black w-full h-full -z-10 opacity-75" />
         <h6
-          className="font-bold text-center uppercase"
+          className="font-bold text-center uppercase text-white"
           style={{ fontSize: "7cqw" }}
         >
           {props.name}
@@ -82,7 +81,7 @@ function Card(props: CardProps) {
         <div className="absolute w-full h-full bg-black opacity-75 -z-10" />
         <div className="w-full p-2 flex flex-col gap-2">
           <p
-            className="bottom-[10%] text-center w-full"
+            className="bottom-[10%] text-center w-full text-white"
             style={{ fontSize: "5cqw" }}
           >
             {props.description}
