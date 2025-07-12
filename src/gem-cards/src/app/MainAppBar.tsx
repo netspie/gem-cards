@@ -17,7 +17,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import PeopleIcon from '@mui/icons-material/People';
+import PeopleIcon from "@mui/icons-material/People";
 const drawerWidth = 240;
 
 interface Props {
@@ -48,12 +48,13 @@ export default function MainAppBar(props: Props) {
   type DrawerListItemProps = {
     text: string;
     icon: React.ReactNode;
+    href: string;
   };
 
   function DrawerListItem(props: DrawerListItemProps) {
     return (
       <ListItem key={props.text} disablePadding>
-        <ListItemButton className="flex gap-4">
+        <ListItemButton className="flex gap-4" href={props.href}>
           {props.icon}
           <ListItemText primary={props.text} className="font-bold" />
         </ListItemButton>
@@ -80,18 +81,21 @@ export default function MainAppBar(props: Props) {
           icon={
             <HomeIcon className="text-white w-10 h-10 m-0 bg-green-600 rounded-xl p-2" />
           }
+          href="/demo"
         />
         <DrawerListItem
           text="Decks"
           icon={
             <StyleIcon className="text-white w-10 h-10 m-0 bg-red-500 rounded-xl p-2" />
           }
+          href="/demo/decks"
         />
         <DrawerListItem
           text="Community"
           icon={
             <PeopleIcon className="text-white w-10 h-10 m-0 bg-blue-600 rounded-xl p-2" />
           }
+          href="/demo/community"
         />
       </List>
       <div>
@@ -102,6 +106,7 @@ export default function MainAppBar(props: Props) {
             icon={
               <LogoutIcon className="text-white w-10 h-10 p-0 m-0 bg-slate-600 rounded-xl p-2" />
             }
+            href="."
           />
         </List>
       </div>
@@ -147,9 +152,6 @@ export default function MainAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Responsive drawer
-          </Typography>
         </Toolbar>
       </AppBar>
       <Box
