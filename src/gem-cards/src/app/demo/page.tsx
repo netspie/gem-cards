@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { ThumbDown, ThumbUp } from "@mui/icons-material";
 import { Card } from "@/app/components/Card";
 
@@ -14,28 +14,28 @@ export default function Demo() {
           />
         </div>
         <div className="flex gap-2 items-center">
-          <Button variant="contained" className="font-bold w-fit bg-red-500">
+          <Button variant="contained" className="font-bold w-fit bg-red-600">
             <ThumbDown />
           </Button>
-          <Button variant="contained" className="w-full font-bold bg-green-600">
+          <Button variant="contained" className="w-full font-bold bg-orange-400">
             Collect
           </Button>
-          <Button variant="contained" className="font-bold w-fit">
+          <Button variant="contained" className="font-bold w-fit bg-blue-600">
             <ThumbUp />
           </Button>
         </div>
         <div className="flex flex-col gap-2 w-full">
           <div className="flex gap-2 w-full">
-            <h6 className="font-bold w-full">Draws</h6>
-            <span className="text-nowrap">32</span>
+            <Typography className="font-bold w-full">Draws</Typography>
+            <Typography className="text-nowrap">32</Typography>
           </div>
           <div className="flex gap-2 w-full">
-            <h6 className="font-bold w-full">Collects</h6>
-            <span className="text-nowrap">3</span>
+            <Typography className="font-bold w-full">Collects</Typography>
+            <Typography className="text-nowrap">3</Typography>
           </div>
           <div className="flex gap-2 w-full">
-            <h6 className="font-bold w-full">Next Reset</h6>
-            <span className="text-nowrap">3:00 PM</span>
+            <Typography className="font-bold w-full">Next Reset</Typography>
+            <Typography className="text-nowrap">3:00 PM</Typography>
           </div>
         </div>
       </div>

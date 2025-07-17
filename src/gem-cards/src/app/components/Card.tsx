@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import Image from "next/image";
 
 export type CardProps = {
@@ -33,12 +34,12 @@ export function Card(props: CardProps) {
 
         <div className="relative flex flex-col justify-center w-full py-1 mt-[3%]">
           <div className="absolute bg-black w-full h-full -z-10 opacity-75" />
-          <h6
+          <Typography variant="h6"
             className="font-bold text-center uppercase text-white"
             style={{ fontSize: "7cqw" }}
           >
             {props.name}
-          </h6>
+          </Typography>
         </div>
 
         {(props.detailLevel === undefined ||
@@ -47,12 +48,12 @@ export function Card(props: CardProps) {
             <div className="absolute bottom-[3%] left-0 w-full h-fit">
               <div className="absolute w-full h-full bg-black opacity-75 -z-10" />
               <div className="w-full p-2 flex flex-col gap-2">
-                <p
+                <Typography
                   className="bottom-[10%] text-center w-full text-white"
                   style={{ fontSize: "5cqw" }}
                 >
                   {props.description}
-                </p>
+                </Typography>
                 {/* <h5 className="absolute bottom-[4%] left-[4%] uppercase text-sm font-bold">
               Rare
             </h5> */}
