@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
 import "./globals.css";
 import HomeAppBar from "./HomeAppBar";
+import Footer from "./Footer";
 
 const publicSans = Public_Sans({
   variable: "--font-public-sans",
@@ -24,12 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="w-full h-full">
       <body
-        className={`${publicSans.variable} antialiased w-full h-full`}
+        className={`${publicSans.variable} antialiased flex flex-col w-full h-full`}
       >
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <HomeAppBar />
-            {children}
+            <div className="flex flex-col h-full gap-20">
+              <div className="flex flex-col shrink">{children}</div>
+              <Footer />
+            </div>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
