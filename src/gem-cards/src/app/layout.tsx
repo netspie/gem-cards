@@ -3,9 +3,9 @@ import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
+import Footer from "./Footer";
 import "./globals.css";
 import HomeAppBar from "./HomeAppBar";
-import Footer from "./Footer";
 
 const publicSans = Public_Sans({
   variable: "--font-public-sans",
@@ -29,9 +29,10 @@ export default function RootLayout({
       >
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
+            {/* <Stack className="fixed w-[2000px] h-[1000px] top-[30%] -left-[25%] bg-red-100 rotate-45 -z-10" /> */}
             <HomeAppBar />
-            <div className="flex flex-col h-full gap-20">
-              <div className="flex flex-col shrink">{children}</div>
+            <div className="flex flex-col h-full">
+              <div className="flex flex-col grow-1">{children}</div>
               <Footer />
             </div>
           </ThemeProvider>

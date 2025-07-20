@@ -49,7 +49,7 @@ export function Card(props: CardProps) {
               <div className="absolute w-full h-full bg-black opacity-75 -z-10" />
               <div className="w-full p-2 flex flex-col gap-2">
                 <Typography
-                  className="bottom-[10%] text-center w-full text-white"
+                  className="bottom-[10%] text-center w-full"
                   style={{ fontSize: "5cqw" }}
                 >
                   {props.description}

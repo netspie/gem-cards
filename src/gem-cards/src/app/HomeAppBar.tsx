@@ -1,18 +1,18 @@
 "use client";
 
-import * as React from "react";
+import { Diamond } from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Stack } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { RocketLaunch } from "@mui/icons-material";
-import { Stack } from "@mui/material";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import * as React from "react";
 
 const pages: string[] = [];
 
@@ -33,7 +33,7 @@ function HomeAppBar() {
     <AppBar position="static" color="transparent" className="shadow-none">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <RocketLaunch
+          <Diamond
             sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
             color="primary"
           />
@@ -105,7 +105,7 @@ function HomeAppBar() {
               ))}
             </Menu>
           </Box>
-          <RocketLaunch
+          <Diamond
             sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
             color="primary"
           />

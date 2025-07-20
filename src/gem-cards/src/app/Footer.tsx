@@ -3,8 +3,8 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="w-full p-4">
-      <div className="flex">
+    <div className="w-full p-4 mt-8">
+      <div className="flex justify-center">
         <Typography>
           Blazingly fast developed by 
         </Typography>
