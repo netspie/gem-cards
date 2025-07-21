@@ -1,21 +1,19 @@
 "use client";
 
 import {
-  Add,
-  ArrowForward,
-  ArrowLeft,
-  ArrowRight,
   Diamond,
   DiamondOutlined,
-  FireExtinguisher,
   LocalFireDepartment,
-  PlusOne,
-  Remove,
 } from "@mui/icons-material";
+import Timeline from "@mui/lab/Timeline";
+import TimelineItem from "@mui/lab/TimelineItem";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineContent from "@mui/lab/TimelineContent";
+import TimelineDot from "@mui/lab/TimelineDot";
 import {
   Button,
   Chip,
-  Divider,
   FormControl,
   InputLabel,
   MenuItem,
@@ -53,7 +51,6 @@ export default function Home() {
           height: 1000,
         }}
       />
-
       <div className="flex flex-col gap-4 w-full md:w-1/2 shrink text-center items-center px-8">
         <Typography
           variant="h3"
@@ -98,6 +95,35 @@ export default function Home() {
           </Stack>
         </div>
       </div>
+      <Timeline position="alternate" className="w-full">
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot color="primary" />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>Make Flashcard</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot color="primary"  />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>Add Desired Properties</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot  color="primary" />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>Turn Flashcard Into Gemcard</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot  color="primary" />
+          </TimelineSeparator>
+          <TimelineContent>Play the Game</TimelineContent>
+        </TimelineItem>
+      </Timeline>
       <div className="flex flex-col gap-4 w-full md:w-1/2 px-8">
         <div
           className="p-4 rounded-xl w-full"
@@ -255,7 +281,7 @@ type SpySelectProps = {
 };
 
 function SpySelect(props: SpySelectProps) {
-  const [value, setValue] = useState<string>();
+  const [value, setValue] = useState<string>("");
 
   return (
     <FormControl className="min-w-1/2" focused>
