@@ -16,6 +16,8 @@ import {
   Chip,
   FormControl,
   InputLabel,
+  List,
+  ListItem,
   MenuItem,
   Paper,
   Select,
@@ -105,30 +107,41 @@ export default function Home() {
         </TimelineItem>
         <TimelineItem>
           <TimelineSeparator>
-            <TimelineDot color="primary"  />
+            <TimelineDot color="primary" />
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>Add Desired Properties</TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineSeparator>
-            <TimelineDot  color="primary" />
+            <TimelineDot color="primary" />
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>Turn Flashcard Into Gemcard</TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineSeparator>
-            <TimelineDot  color="primary" />
+            <TimelineDot color="primary" />
           </TimelineSeparator>
           <TimelineContent>Play the Game</TimelineContent>
         </TimelineItem>
       </Timeline>
-      <div className="flex flex-col gap-4 w-full md:w-1/2 px-8">
+      <div className="flex gap-4 w-full px-8">
+        <div className="flex flex-col gap-4 w-full md:w-1/2 px-8">
+          <Typography className="font-bold">For whom is it?</Typography>
+          <List className="">
+            <ListItem>Teachers - engage your students</ListItem>
+            <ListItem>Streamers, Content Creators - engage your audience</ListItem>
+            <ListItem>Individual Learners - stay motivated with your study</ListItem>
+          </List>
+        </div>
         <div
-          className="p-4 rounded-xl w-full"
+          className="p-4 rounded-xl w-full md:w-1/2"
           style={{ background: theme.palette.primary.main }}
-        >
+        ></div>
+      </div>
+      <div className="flex flex-col gap-4 w-full md:w-1/2 px-8">
+        <div>
           <Typography className="text-white text-center font-bold">
             Don&apos;t make learning a chore! Make it fun! Make it a game!
           </Typography>
