@@ -30,6 +30,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
+import Image from "next/image";
 
 export default function Home() {
   const theme = useTheme();
@@ -37,7 +38,7 @@ export default function Home() {
     "hover:shadow-2xl transition-all duration-200 ease-in-out";
 
   return (
-    <div className="relative flex flex-col gap-12 xl:gap-22 w-full h-fit items-center xl:justify-center mt-12 md:mt-36 xl:px-40 mb-24 xl:mb-0">
+    <div className="relative flex flex-col gap-12 xl:gap-22 w-full h-fit items-center xl:justify-center mt-12 md:mt-36 xl:px-20 mb-24 xl:mb-0">
       <div
         className="fixed -translate-[60%] top-0 rounded-full -z-10 opacity-10"
         style={{
@@ -53,88 +54,179 @@ export default function Home() {
           height: 1000,
         }}
       />
-      <div className="flex flex-col gap-4 w-full md:w-1/2 shrink text-center items-center px-8">
-        <Typography
-          variant="h3"
-          className="text-4xl font-bold text-gray-700 wrap-break-word text-wrap"
-        >
-          Engage your audience with gamified
-        </Typography>
-        <div className="flex w-full gap-0 justify-center">
-          <Typography className="text-center text-6xl font-bold">
-            Gem
-          </Typography>
+      <Stack className="w-full xl:flex-row xl:gap-24 justify-center">
+        <div className="flex flex-col gap-4 w-full shrink text-center items-center px-8">
           <Typography
-            className="text-center text-6xl font-bold"
-            color="primary"
+            variant="h3"
+            className="text-4xl font-bold text-gray-700 wrap-break-word text-wrap"
           >
-            Cards
+            Make Learning Fun and Interactive with
           </Typography>
-        </div>
-        <Typography className="text-lg sm:text-xl text-gray-500 mt-2">
-          Make flashcards and turn them into an addictive collecting game,{" "}
-          <br /> making learning effortless for your audience.
-        </Typography>
-        <div className="flex flex-col items-center mt-4">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <TextField id="name" label="Name" size="small" className="w-72" />
-            <TextField
-              id="email"
-              label="Email"
-              size="small"
-              className="w-72"
-              required
-            />
+          <div className="flex w-full gap-0 justify-center">
+            <Typography className="text-center text-6xl font-bold">
+              Gem
+            </Typography>
+            <Typography
+              className="text-center text-6xl font-bold"
+              color="primary"
+            >
+              Cards
+            </Typography>
           </div>
-          <Button variant="contained" className="w-full mt-4">
-            Get Notified About Launch
-          </Button>
-          <Typography className="text-sm mt-2">
-            We&apos;ll never share this info with anyone
+          <Typography className="text-lg sm:text-xl text-gray-500 mt-2">
+            Make flashcards and turn them into an addictive collecting game,{" "}
+            <br /> making knowledge absorption effortless - for teachers and
+            learners.
           </Typography>
-          <Stack className="items-center mt-4">
-            <GemDisplay gemCount={5} />
-          </Stack>
+          <div className="flex flex-col items-center mt-4 w-full">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
+              <SpyTextField label="Name" className="w-full" />
+              <SpyTextField label="Email" className="w-full" required />
+            </div>
+            <Stack className="flex-row w-full gap-4 items-center">
+              <Button variant="contained" className="w-full mt-4 text-nowrap">
+                Get Notified About Launch
+              </Button>
+            </Stack>
+            <Typography className="text-sm mt-2" color="primary">
+              We&apos;ll never share your info with anyone
+            </Typography>
+            <Typography className="font-bold mt-2">or</Typography>
+            <Button
+              variant="contained"
+              className="w-full mt-2 bg-orange-500 text-nowrap text-white"
+            >
+              Become a Founding Member Now for 5$
+            </Button>
+            <Stack className="mt-4">
+              <Typography className="text-orange-500 text-sm">
+                It is a one-time payment. Your subscription will automatically
+                start after launch.
+              </Typography>
+              <Typography className="mt-2 text-sm" color="primary">
+                You can refund your purchase back anytime — risk-free commitment
+                to our early supporters
+              </Typography>
+            </Stack>
+            <Stack className="flex-row gap-3 mt-8">
+              <GemDisplay gemCount={1} hiddenEmptyGems />
+              <Typography className="text-nowrap text-sm text-gray-500 italic">
+                Built on proven learning methods used by millions
+              </Typography>
+              <GemDisplay gemCount={1} hiddenEmptyGems />
+            </Stack>
+          </div>
+        </div>
+        <Stack
+          className="relative grow-1 w-[70%] pl-32"
+          style={{ containerType: "inline-size" }}
+        >
+          <Card
+            front="Fire"
+            frontSize={12}
+            frontClassName="font-bold"
+            name="火"
+            gemCount={4}
+            xp={200}
+            className="w-[250px] outline-4 outline-red-600"
+          />
+          <Card
+            front="Fire"
+            frontSize={12}
+            frontClassName="font-bold"
+            name="火"
+            gemCount={4}
+            xp={200}
+            className="absolute w-[250px] translate-[65%] outline-4 outline-red-600"
+          />
+          {/* <div
+            className="p-2 rounded-2xl"
+            style={{ background: theme.palette.primary.main }}
+          >
+            <Stack className="xl:w-[350px] aspect-[4/5] bg-white rounded-xl p-3 gap-2">
+              <Typography className="w-ful text-center uppercase font-bold">
+                Create Simple Gemcard
+              </Typography>
+              <SpyTextField
+                label="Question"
+                defaultValue="What is the capital of Australia?"
+              />
+              <SpyTextField label="Answer" defaultValue="Canberra" />
+              <Button variant="contained">Create</Button>
+            </Stack>
+          </div> */}
+        </Stack>
+      </Stack>
+      <div className="flex gap-16 w-full px-8 mt-36 bg-blue-100 rounded-xl p-12">
+        {/* */}
+        <Timeline position="alternate" className="w-full shrink-1">
+          <TimelineItem>
+            <TimelineSeparator>
+              <TimelineDot color="primary" />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent className="font-bold">
+              Create Your Deck
+            </TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelineSeparator>
+              <TimelineDot color="primary" />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent className="">Add Flashcards</TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelineSeparator>
+              <TimelineDot color="primary" />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent className="font-bold">
+              Turn Flashcards Into Collectible Cards
+            </TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelineSeparator>
+              <TimelineDot color="primary" />
+            </TimelineSeparator>
+            <TimelineContent className="">
+              Enjoy the Game and Learn without Pain
+            </TimelineContent>
+          </TimelineItem>
+        </Timeline>
+        <div className="flex flex-col gap-4 w-full md:w-3/4 px-8">
+          <Typography className="text-4xl text-center font-bold">
+            How it works?
+          </Typography>
+          <Typography className="text-center text-xl text-gray-500 uppercase font-bold">
+            Start by creating your own deck
+          </Typography>
+          <Typography className="text-center text-xl">
+            Start by creating your own deck and adding flashcards tailored to
+            what you want to learn. Then, transform these flashcards into
+            collectible cards, turning study into a fun and engaging game.
+            Finally, enjoy learning effortlessly through gameplay that keeps you
+            motivated and helps you retain knowledge without the usual stress or
+            pain.
+          </Typography>
         </div>
       </div>
-      <Timeline position="alternate" className="w-full">
-        <TimelineItem>
-          <TimelineSeparator>
-            <TimelineDot color="primary" />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>Make Flashcard</TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineSeparator>
-            <TimelineDot color="primary" />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>Add Desired Properties</TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineSeparator>
-            <TimelineDot color="primary" />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>Turn Flashcard Into Gemcard</TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineSeparator>
-            <TimelineDot color="primary" />
-          </TimelineSeparator>
-          <TimelineContent>Play the Game</TimelineContent>
-        </TimelineItem>
-      </Timeline>
       <div className="flex gap-4 w-full px-8">
         <div className="flex flex-col gap-4 w-full md:w-1/2 px-8">
-          <Typography className="font-bold">For whom is it?</Typography>
+          <Typography className="text-4xl font-bold">
+            Who is this for?
+          </Typography>
           <List className="">
             <ListItem>Teachers - engage your students</ListItem>
-            <ListItem>Streamers, Content Creators - engage your audience</ListItem>
-            <ListItem>Individual Learners - stay motivated with your study</ListItem>
+            <ListItem>
+              Streamers, Content Creators - engage your audience
+            </ListItem>
+            <ListItem>
+              Individual Learners - stay motivated with your study
+            </ListItem>
           </List>
         </div>
+        {/* */}
         <div
           className="p-4 rounded-xl w-full md:w-1/2"
           style={{ background: theme.palette.primary.main }}
@@ -217,6 +309,27 @@ export default function Home() {
             <SpyTextField label="Meaning" defaultValue="Water" />
             <Button variant="contained">Create</Button>
           </Stack>
+        </div>
+        <div className="flex gap-4 w-full px-8 mt-36">
+          {/* */}
+          <div
+            className="p-4 rounded-xl w-full md:w-1/2"
+            style={{ background: theme.palette.primary.main }}
+          ></div>
+          <div className="flex flex-col gap-4 w-full md:w-1/2 px-8">
+            <Typography className="text-4xl font-bold text-end">
+              About Author
+            </Typography>
+            <List className="">
+              <ListItem>Teachers - engage your students</ListItem>
+              <ListItem>
+                Streamers, Content Creators - engage your audience
+              </ListItem>
+              <ListItem>
+                Individual Learners - stay motivated with your study
+              </ListItem>
+            </List>
+          </div>
         </div>
         {/* <div className="flex gap-2 w-full">
           <Button variant="contained" className="w-fit">
@@ -317,9 +430,15 @@ function SpySelect(props: SpySelectProps) {
   );
 }
 
-type SpyTextFieldProps = {
+type SpyProps = {
+  className?: string;
+  style?: React.CSSProperties;
+};
+
+type SpyTextFieldProps = SpyProps & {
   label: string;
   defaultValue?: string;
+  required?: boolean;
 };
 
 function SpyTextField(props: SpyTextFieldProps) {
@@ -328,9 +447,11 @@ function SpyTextField(props: SpyTextFieldProps) {
       id={props.label}
       label={props.label}
       size="small"
-      className="w-full"
+      className={twMerge("w-full", props.className)}
+      // style={{ background: theme.palette.background.default, ...props.style }}
       defaultValue={props.defaultValue}
       focused
+      required={props.required}
     />
   );
 }
@@ -351,7 +472,7 @@ function Card(props: CardProps) {
   return (
     <Paper
       className={twMerge(
-        `relative flex flex-col items-center justify-center w-[350px] aspect-[4/5] shadow-[0_0_20px_rgba(0,0,0,0.1)] overflow-clip bg-white rounded-xl`,
+        `relative flex flex-col items-center justify-center w-full aspect-[4/5] shadow-[0_0_20px_rgba(0,0,0,0.1)] overflow-clip bg-white rounded-xl`,
         props.className
       )}
       style={{ containerType: "inline-size" }}
@@ -419,6 +540,7 @@ type GemDisplayProps = {
   className?: string;
   iconClassName?: string;
   iconStyle?: React.CSSProperties;
+  hiddenEmptyGems?: boolean;
 };
 
 function GemDisplay(props: GemDisplayProps) {
@@ -433,12 +555,14 @@ function GemDisplay(props: GemDisplayProps) {
             style={props.iconStyle}
           />
         ) : (
-          <DiamondOutlined
-            key={i}
-            color="disabled"
-            className={props.iconClassName}
-            style={props.iconStyle}
-          />
+          !props.hiddenEmptyGems && (
+            <DiamondOutlined
+              key={i}
+              color="disabled"
+              className={props.iconClassName}
+              style={props.iconStyle}
+            />
+          )
         )
       )}
     </div>

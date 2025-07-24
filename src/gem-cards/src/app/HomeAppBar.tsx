@@ -33,44 +33,43 @@ function HomeAppBar() {
     <AppBar position="static" color="transparent" className="shadow-none">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Diamond
-            sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
-            color="primary"
-          />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: "bold",
-              letterSpacing: ".3rem",
-              textDecoration: "none",
-            }}
-            color="secondary"
-          >
-            Gem
-          </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: "bold",
-              letterSpacing: ".3rem",
-              textDecoration: "none",
-            }}
-            color="primary"
-            className="font-bold"
-          >
-            Cards
-          </Typography>
+          <Stack className="flex-row items-center">
+            <Diamond
+              sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+              className="translate-y-[2px]"
+              color="primary"
+            />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href=""
+              sx={{
+                display: { xs: "none", md: "flex" },
+                fontWeight: "bold",
+                textDecoration: "none",
+              }}
+              color="secondary"
+            >
+              Gem
+            </Typography>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href=""
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontWeight: "bold",
+                textDecoration: "none",
+              }}
+              color="primary"
+              className="font-bold"
+            >
+              Cards
+            </Typography>
+          </Stack>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -105,46 +104,45 @@ function HomeAppBar() {
               ))}
             </Menu>
           </Box>
-          <Diamond
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-            color="primary"
-          />
-          <Stack className="flex-row w-fit">
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                textDecoration: "none",
-              }}
-              color="secondary"
-            >
-              Gem
-            </Typography>
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                textDecoration: "none",
-              }}
+          <Stack className="flex-row items-center w-full justify-end">
+            <Diamond
+              sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
               color="primary"
-            >
-              Cards
-            </Typography>
+            />
+            <Stack className="flex-row w-fit items-end">
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                href="#app-bar-with-responsive-menu"
+                sx={{
+                  display: { xs: "flex", md: "none" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  textDecoration: "none",
+                }}
+                color="secondary"
+              >
+                Gem
+              </Typography>
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                href="#app-bar-with-responsive-menu"
+                sx={{
+                  display: { xs: "flex", md: "none" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  textDecoration: "none",
+                }}
+                color="primary"
+              >
+                Cards
+              </Typography>
+            </Stack>
           </Stack>
           <Box
             sx={{
@@ -153,7 +151,7 @@ function HomeAppBar() {
               position: "absolute",
               left: "50%",
               transform: "translateX(-50%)",
-              gap: 4
+              gap: 4,
             }}
           >
             {pages.map((page) => (
