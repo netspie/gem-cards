@@ -74,7 +74,7 @@ export default function Home() {
           </Typography>
           <div className="flex flex-col items-center mt-4 w-full">
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
-              <SpyTextField label="Name" className="w-full" />
+              <SpyTextField label="Name" className="w-full" required />
               <SpyTextField label="Email" className="w-full" required />
             </div>
             <Stack className="flex-row w-full gap-4 items-center">
@@ -154,16 +154,21 @@ export default function Home() {
         <AlternatePanel
           title="1. Type-in Question and Answer"
           description="User manually inputs a question and provides their own answer. This is the raw knowledge capture phase — turning curiosity or confusion into a personal learning unit."
+          textPanelClass="!pt-0"
         >
-          <SimpleCard className="justify-start gap-2 p-4">
+          <Paper
+            className={twMerge(
+              "relative flex flex-col items-center justify-center p-4 gap-2 h-fit shadow-[0_0_30px_rgba(0,0,0,0.2)] bg-white rounded-xl w-[250px]"
+            )}
+            style={{ containerType: "inline-size" }}
+          >
             <SpyTextField
               label="Question"
               defaultValue="Capital of Australia?"
               className="text-center"
             />
             <SpyTextField label="Answer" defaultValue="Canberra" />
-            {/* <Button variant="contained">Create</Button> */}
-          </SimpleCard>
+          </Paper>
         </AlternatePanel>
         <AlternatePanel
           title="2. Create Flashcard"
@@ -213,7 +218,9 @@ export default function Home() {
             />
             <Button
               variant="contained"
-              className={twMerge("w-[69%] translate-y-[110%] bg-orange-500 mb-8")}
+              className={twMerge(
+                "w-[69%] translate-y-[110%] bg-orange-500 mb-8"
+              )}
             >
               Collect
             </Button>
@@ -464,7 +471,7 @@ type AlternatePanelProps = {
   title: string;
   description: string;
   children: React.ReactNode;
-
+  textPanelClass?: string;
   right?: boolean;
 };
 
@@ -487,7 +494,8 @@ function AlternatePanel(props: AlternatePanelProps) {
       <Stack
         className={twMerge(
           "w-4/5 md:w-2/3 xl:w-2/5 gap-4 text-center xl:text-left md:pt-8",
-          props.right && "xl:text-right"
+          props.right && "xl:text-right",
+          props.textPanelClass
         )}
       >
         <Typography variant="h6" className="font-bold" color="primary">
